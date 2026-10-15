@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 const MainLayouts = () => {
     return (
         <div>
-            <div className="relative z-10 flex min-h-screen flex-col">
+            <div className="relative z-10 flex min-h-screen flex-col bg-[#232424]">
 
                 <Navbar />
                 <main className="flex flex-1 flex-col">
