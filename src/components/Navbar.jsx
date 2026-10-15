@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Search, Bookmark, User, Home, Tv, Compass } from 'lucide-react'
-
 const Navbar = () => {
+
   return (
     <>
 
@@ -16,7 +16,7 @@ const Navbar = () => {
             <Search className='w-4 h-4' /> Search
           </h2>
           <NavLink title='On Demand' className={'hidden lg:block text-sm px-3 py-2 rounded-full hover:bg-white hover:text-black transition duration-300 font-semibold'}>
-            On Demand
+            On Demand  
           </NavLink>
           <NavLink title='Discover' className={'hidden lg:block text-sm px-3 py-2 rounded-full hover:bg-white hover:text-black transition duration-300 font-semibold'}>
             Discover

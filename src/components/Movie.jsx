@@ -1,39 +1,21 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChevronRight } from 'lucide-react'
+import { useMovies } from '../context/MovieContext';
 
 const Movie = () => {
-  const [data, setdata] = useState([])
-  const [movieload, setmovieload] = useState(70)
-  const [loading, setloading] = useState(true)
-  const [error, seterror] = useState(null)
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const { data, loading, error } = useMovies();
+  if (loading) {
+    return <p>Loading movies...</p>;
+  }
 
-  useEffect(() => {
-    const moviedata = async () => {
-      try {
-        setloading(true)
-        seterror(null)
-        const fetchdata = await fetch('https://api.tvmaze.com/shows')
-        const response = await fetchdata.json()
-        setdata(response)
-      } catch (error) {
-        seterror(error)
-      } finally {
-        setloading(false)
-      }
-    }
-    moviedata()
-  }, [])
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-
-  const displayedMovies = data.slice(61, movieload)
+  if (error) {
+    return <p>{error}</p>;
+  }
+  const displayedMovies = data.slice(61, 70)
 
   return (
-    <div className="min-h-screen px-6 md:px-10 pt-10">
+    <div className=" px-6 md:px-10 pt-10">
       <h1 className="text-white flex items-center text-2xl font-bold mb-4 cursor-pointer group">Trending Trailers <ChevronRight className="group-hover:translate-x-1 transition duration-200" /></h1>
       <StyledWrapper>
         <div className="slider" style={{ '--width': '200px', '--height': '300px', '--quantity': displayedMovies.length }}>

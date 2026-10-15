@@ -1,12 +1,16 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import Movie from '../components/Movie'
+import PopularBD from '../components/PopularBD'
+import Mostwatch from '../components/Mostwatch'
 const Home = () => {
   return (
     <div>
       <div>
-        <Hero/>
-<Movie/>
+        <Hero />
+        <Movie />
+        <PopularBD />
+        <Mostwatch />
       </div>
     </div>
   )
