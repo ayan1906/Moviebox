@@ -2,31 +2,36 @@ import React from 'react'
 import styled from 'styled-components';
 import { ChevronRight } from 'lucide-react'
 import { useMovies } from '../context/MovieContext';
+import Moviemodal from './Moviemodal';
+import {useState} from 'react'
 
 const Leavesoon = () => {
-    const { data } = useMovies()
+  const { data } = useMovies()
+  const [movie, setMovie] = useState(null)
 
-    const displayedMovie = data.slice(231, 240)
+  const displayedMovie = data.slice(231, 240)
 
-    return (
-        <div className=" px-6 md:px-10 pt-10">
-            <h1 className="text-white flex items-center text-2xl font-bold mb-4 cursor-pointer group">Leaving Soon<ChevronRight className="group-hover:translate-x-1 transition duration-200" /></h1>
-            <StyledWrapper>
-                <div className="slider" style={{ '--width': '200px', '--height': '300px', '--quantity': displayedMovie.length }}>
-                    <div className="list">
+  return (
+    <div className=" px-6 md:px-10 pt-10">
+      <h1 className="text-white flex items-center text-2xl font-bold mb-4 cursor-pointer group">Leaving Soon<ChevronRight className="group-hover:translate-x-1 transition duration-200" /></h1>
+      <StyledWrapper>
+        <div className="slider" style={{ '--width': '200px', '--height': '300px', '--quantity': displayedMovie.length }}>
+          <div className="list">
 
-                        {displayedMovie.map((movie, index) => (
-                            <div key={movie.id} className="item" style={{ '--position': index + 1 }}>
-                                <div className="card cursor-pointer">
-                                    <img className="w-80 rounded-4xl" src={movie.image?.original} alt="" />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+            {displayedMovie.map((movie, index) => (
+              <div key={movie.id} className="item" style={{ '--position': index + 1 }}>
+                <div onClick={() => setMovie(movie)} className="card cursor-pointer">
+                  <img className="w-80 rounded-4xl" src={movie.image?.original} alt="" />
                 </div>
-            </StyledWrapper>
+              </div>
+            ))}
+          </div>
         </div>
-    );
+        <Moviemodal movie={movie} setmovie={setMovie} />
+
+      </StyledWrapper>
+    </div>
+  );
 }
 
 const StyledWrapper = styled.div`

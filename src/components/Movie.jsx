@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, X } from 'lucide-react'
 import { useMovies } from '../context/MovieContext';
+import Moviemodal from './Moviemodal';
 
 const Movie = () => {
+  const [movie, setMovie] = useState(null)
   const { data, loading, error } = useMovies();
   if (loading) {
     return <p>Loading movies...</p>;
@@ -23,16 +25,19 @@ const Movie = () => {
 
             {displayedMovies.map((movie, index) => (
               <div key={movie.id} className="item" style={{ '--position': index + 1 }}>
-                <div className="card cursor-pointer">
+                <div onClick={() => setMovie(movie)} className="card cursor-pointer">
                   <img className="w-80 rounded-4xl" src={movie.image?.original} alt="" />
                 </div>
               </div>
             ))}
-
           </div>
         </div>
+        <Moviemodal movie={movie} setmovie={setMovie} />
       </StyledWrapper>
+
     </div>
+
+
   );
 }
 
