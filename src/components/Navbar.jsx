@@ -4,7 +4,7 @@ import { Search, Bookmark, User, Home, Tv, Compass } from 'lucide-react'
 const Navbar = () => {
 
   return (
-    <>
+    <div>
 
       <div className='sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 lg:px-16 py-2 text-white bg-black/10 backdrop-blur-2xl'>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Navbar for Mobile & Tab View */}
-      <div className='lg:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around py-3 text-white bg-black/40 backdrop-blur-2xl border-t border-white/10'>
+      <div className='lg:hidden fixed bottom-0 left-0 right-0 z-10 flex items-center justify-around py-3 text-white bg-black/40 backdrop-blur-2xl border-t border-white/10'>
         <NavLink to={'/'} title='Home' className={({ isActive }) =>`${isActive ? "border border-[#3F3F3F]" : ""} flex flex-col items-center gap-1 text-xs px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition duration-300 font-semibold`}>
           <Home className='w-5 h-5' />
         </NavLink>
@@ -68,7 +68,8 @@ const Navbar = () => {
         </NavLink>
 
       </div>
-    </>
+
+    </div>
   )
 }
 
