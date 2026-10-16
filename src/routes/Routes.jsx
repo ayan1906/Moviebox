@@ -1,7 +1,12 @@
 import { createBrowserRouter } from "react-router-dom"
 import MainLayouts from "../layout/MainLayouts"
 import Home from "../pages/Home"
+import Search from "../pages/Search"
+import Ondemand from "../pages/Ondemand"
+import Discover from "../pages/Discover"
+
 export const Router = createBrowserRouter([
+
     {
         path: '/',
         element: <MainLayouts/>,
@@ -9,7 +14,20 @@ export const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>
-            }
+            },
+            {
+                path: '/search',
+                element: <Search/>
+            },
+            {
+                path: '/ondemand',
+                element: <Ondemand/>
+            },
+            {
+                path: '/discover',
+                element: <Discover/>
+            },
+            
         ]
     }
 ])
