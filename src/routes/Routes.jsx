@@ -4,7 +4,7 @@ import Home from "../pages/Home"
 import Search from "../pages/Search"
 import Ondemand from "../pages/Ondemand"
 import Discover from "../pages/Discover"
-
+import Signin from "../pages/Signin"
 export const Router = createBrowserRouter([
 
     {
@@ -26,6 +26,10 @@ export const Router = createBrowserRouter([
             {
                 path: '/discover',
                 element: <Discover/>
+            },
+            {
+                path: '/signin',
+                element: <Signin/>
             },
             
         ]
