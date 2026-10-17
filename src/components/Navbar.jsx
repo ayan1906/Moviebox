@@ -44,7 +44,7 @@ const Navbar = () => {
 
           {/* Sign In (User Icon on Mobile/Tab, Text Button on Desktop) */}
           <NavLink className={'text-sm p-2 lg:px-3 lg:py-2 rounded-full bg-white text-black transition duration-300 font-semibold flex items-center justify-center'}>
-            <User className='w-5 h-5 lg:hidden' />
+
             {user ? (
               <div className="flex items-center gap-3">
                 <img
@@ -53,6 +53,7 @@ const Navbar = () => {
                   title={user.displayName || user.email}
                   className="w-8 h-8 rounded-full border border-white/20 object-cover"
                 />
+
                 <button
                   onClick={logOut}
                   title="Logout"
@@ -63,14 +64,15 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <NavLink className="text-sm p-2 lg:px-3 lg:py-2 rounded-full bg-white text-black transition duration-300 font-semibold flex items-center justify-center" to="/signin">
+              <NavLink className="text-sm p-2 lg:px-2 lg:py-2 rounded-full bg-white text-black transition duration-300 font-semibold flex items-center justify-center" to="/signin">
                 <span className="hidden lg:inline">Sign In</span>
+                <User className='w-5 h-5 lg:hidden' />
               </NavLink>
-            )}          </NavLink>
+            )}
+          </NavLink>
         </div>
       </div>
 
-      {/* Bottom Navbar for Mobile & Tab View */}
       <div className='lg:hidden fixed bottom-0 left-0 right-0 z-10 flex items-center justify-around py-3 text-white bg-black/40 backdrop-blur-2xl border-t border-white/10'>
         <NavLink to={'/'} title='Home' className={({ isActive }) => `${isActive ? "border border-[#3F3F3F]" : ""} flex flex-col items-center gap-1 text-xs px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition duration-300 font-semibold`}>
           <Home className='w-5 h-5' />

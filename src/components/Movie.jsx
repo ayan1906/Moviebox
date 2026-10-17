@@ -6,7 +6,9 @@ import Moviemodal from './Moviemodal';
 
 const Movie = () => {
   const [movie, setMovie] = useState(null)
+
   const { data, loading, error } = useMovies();
+
   if (loading) {
     return <p>Loading movies...</p>;
   }
