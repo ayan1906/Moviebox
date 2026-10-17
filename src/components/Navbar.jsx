@@ -32,15 +32,12 @@ const Navbar = () => {
         {/* Right Side: Desktop Buttons & Mobile/Tab Icons */}
         <div className='flex items-center gap-3 lg:gap-6'>
           {/* Mobile & Tab Search Icon */}
-          <button className='lg:hidden p-2 rounded-full bg-[#353535] hover:bg-[#2d2d33] transition duration-300 cursor-pointer'>
+          <NavLink to={'/search'} className='lg:hidden p-2 rounded-full bg-[#353535] hover:bg-[#2d2d33] transition duration-300 cursor-pointer'>
             <Search className='w-5 h-5' />
-          </button>
+          </NavLink>
 
           {/* My Lists (Icon on Mobile/Tab, Text + Icon on Desktop) */}
-          <NavLink className={'flex items-center gap-1 text-sm p-2 lg:px-3 lg:py-2 rounded-full hover:bg-white hover:text-black transition duration-300 font-semibold'}>
-            <Bookmark className='w-5 h-5 lg:w-4 lg:h-4' />
-            <span className='hidden lg:inline'>My Lists</span>
-          </NavLink>
+          
 
           {/* Sign In (User Icon on Mobile/Tab, Text Button on Desktop) */}
           <NavLink className={'text-sm p-2 lg:px-3 lg:py-2 rounded-full bg-white text-black transition duration-300 font-semibold flex items-center justify-center'}>

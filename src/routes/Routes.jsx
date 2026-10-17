@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import MainLayouts from "../layout/MainLayouts"
 import Home from "../pages/Home"
-import Search from "../pages/Search"
+import Searchpage from "../pages/Searchpage"
 import Ondemand from "../pages/Ondemand"
 import Discover from "../pages/Discover"
 import Signin from "../pages/Signin"
@@ -17,7 +17,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/search',
-                element: <Search/>
+                element: <Searchpage/>
             },
             {
                 path: '/ondemand',

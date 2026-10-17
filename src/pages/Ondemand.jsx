@@ -30,7 +30,7 @@ const Ondemand = () => {
       
       {/* Hero Section */}
       <div className="flex flex-col max-w-3xl mt-20 md:mt-24 px-6 md:px-16 gap-4">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white ">
           Watch Free Movies & TV Shows
         </h1>
         <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed">
